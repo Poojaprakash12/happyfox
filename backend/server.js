@@ -77,37 +77,55 @@ app.post("/api/match", async (req, res) => {
   try {
     const { query } = req.body;
     
-    // Validate if query contains technical skills
-    const techSkillsRegex = /python|java|javascript|react|node|angular|vue|django|flask|spring|hibernate|sql|nosql|mongodb|mysql|postgresql|aws|azure|gcp|docker|kubernetes|devops|machine learning|ai|blockchain|cybersecurity|ethical hacking|mobile|android|ios|swift|kotlin|c\+\+|rust|go|typescript/i;
-    
-    if (!query || !techSkillsRegex.test(query)) {
+    if (!query || query.trim() === '') {
       return res.status(400).json({ 
-        error: "Please enter valid technical skills (e.g., Python, Java, React)" 
+        error: "Please enter a search query" 
       });
     }
+    
+    console.log("Received search query:", query);
     
     // Call your Python script to match resumes
     const pythonProcess = spawn('python', ['resume_matcher.py', query]);
     
     let result = '';
+    let errorOutput = '';
+    
     pythonProcess.stdout.on('data', (data) => {
       result += data.toString();
+      console.log("Python output:", data.toString());
     });
     
     pythonProcess.stderr.on('data', (data) => {
+      errorOutput += data.toString();
       console.error(`Python Error: ${data}`);
     });
     
     pythonProcess.on('close', (code) => {
+      console.log("Python process exited with code:", code);
+      console.log("Full Python output:", result);
+      
       if (code !== 0) {
-        return res.status(500).json({ error: "Failed to process request" });
+        return res.status(500).json({ error: "Failed to process request: " + errorOutput });
       }
       
       try {
-        const parsedResult = JSON.parse(result);
+        // Clean the output to ensure it's valid JSON
+        const cleanedResult = result.trim();
+        
+        // Try to parse the JSON directly
+        const parsedResult = JSON.parse(cleanedResult);
+        
+        // Check if it's an error message
+        if (parsedResult.error) {
+          return res.status(400).json({ error: parsedResult.error });
+        }
+        
+        // Return the parsed result directly
         return res.json({ result: parsedResult });
       } catch (e) {
-        return res.status(500).json({ error: "Invalid response format" });
+        console.error("JSON parsing error:", e);
+        return res.status(500).json({ error: "Invalid response format from Python script" });
       }
     });
   } catch (error) {
