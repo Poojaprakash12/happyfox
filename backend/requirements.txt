@@ -1,0 +1,12 @@
+Flask
+flask-cors
+Werkzeug
+pandas
+numpy
+scikit-learn
+PyPDF2
+nltk
+spacy
+python-dotenv
+faker
+

@@ -1,0 +1,76 @@
+/* ResumeUpload.module.css */
+.container {
+  text-align: center;
+  padding: 30px;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.uploadBox {
+  border: 2px dashed rgba(255, 255, 255, 0.5);
+  padding: 30px;
+  width: 60%;
+  max-width: 400px;
+  border-radius: 15px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  text-align: center;
+  color: #fff;
+}
+
+.uploadBox:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.uploadLabel {
+  display: block;
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.fileInfo {
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 15px;
+  border-radius: 10px;
+  width: 60%;
+  max-width: 400px;
+  color: white;
+}
+
+.downloadLink {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #6e8efb, #a777e3);
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+}
+
+.downloadLink:hover {
+  background: linear-gradient(135deg, #5a75f3, #925adf);
+  transform: translateY(-3px);
+}
+
+body {
+  background: linear-gradient(135deg, #1e1e2f, #282846);
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

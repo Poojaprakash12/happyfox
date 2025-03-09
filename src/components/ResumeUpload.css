@@ -1,0 +1,241 @@
+.resume-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(to right, #9a90a5, #6b80a5);
+    font-family: "Poppins", sans-serif;
+    padding: 20px;
+  }
+  
+  /* Upload Card */
+  .upload-card {
+    background: rgb(255, 254, 254);
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 12px rgba(53, 52, 52, 0.2);
+    text-align: center;
+    width: 380px;
+  }
+  
+  /* Heading */
+  .upload-card h2 {
+    font-size: 22px;
+    color: #110f0f;
+    margin-bottom: 15px;
+  }
+  
+  /* File Input Hidden */
+  #fileInput {
+    display: none;
+  }
+  
+  /* Choose File Button */
+  .choose-file-btn {
+    background: #5b6c7e;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 10px;
+    transition: background 0.3s;
+  }
+  
+  .choose-file-btn:hover {
+    background: #0056b3;
+  }
+  
+  /* Selected File Text */
+  .selected-file {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #444;
+  }
+  
+  /* Upload Button */
+  .upload-btn {
+    background: #66a274;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    display: inline-block;
+    margin-top: 15px;
+    border: none;
+    transition: background 0.3s;
+  }
+  
+  .upload-btn:hover {
+    background: #218838;
+  }
+  
+  /* Upload Status */
+  .upload-status {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #333;
+    font-weight: bold;
+  }
+  
+  /* Uploaded Files Section */
+  .uploaded-files {
+    background: white;
+    padding: 10px;
+    margin-top: 25px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+  }
+  
+  .uploaded-files h3 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  /* File List */
+  .uploaded-files ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .uploaded-files li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8f9fa;
+    padding: 8px 10px;
+    border-radius: 6px;
+    margin-top: 6px;
+  }
+  
+  /* Download Link */
+  .download-link {
+    color: #404953;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .download-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* Add these styles to your existing ResumeUpload.css file */
+  
+  .search-container {
+    display: flex;
+    margin-bottom: 15px;
+  }
+  
+  .search-input {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px 0 0 6px;
+    font-size: 14px;
+  }
+  
+  .search-btn {
+    background: #5b6c7e;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 0 6px 6px 0;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .search-btn:hover {
+    background: #0056b3;
+  }
+  
+  .search-btn:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+  }
+  
+  .candidates-list {
+    margin-top: 20px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+  }
+  
+  .candidates-list h3 {
+    color: #333;
+    margin-bottom: 15px;
+    text-align: center;
+    font-size: 18px;
+  }
+  
+  .candidates-list ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .candidates-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .candidates-list li:last-child {
+    border-bottom: none;
+  }
+  
+  .candidates-list li strong {
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .skills {
+    color: #0056b3;
+    font-size: 14px;
+  }
+  
+  /* Make the skills display as colored tags */
+  .skills {
+    display: inline-block;
+    word-break: break-word;
+  }
+  
+  .status-message {
+    margin-top: 10px;
+    padding: 8px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+  
+  .status-message:first-letter {
+    text-transform: uppercase;
+  }
+  
+  .candidate-name {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 8px;
+    color: #333;
+  }
+  
+  .candidate-skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-bottom: 5px;
+  }
+  
+  .skill-tag {
+    background-color: #e9f5ff;
+    color: #0056b3;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    display: inline-block;
+  }
+  
